@@ -3,7 +3,7 @@
 <svg version="1.1" id="레이어_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" viewBox="0 0 50 150" style="enable-background:new 0 0 50 150;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:none;stroke:#697790;stroke-width:3;stroke-miterlimit:10;}
+	.st0{fill:#697790;}
 </style>
-<line class="st0" x1="53.2" y1="-9.7" x2="-4.4" y2="163.1"/>
+<rect x="-75" y="73.5" transform="matrix(0.2982 -0.9545 0.9545 0.2982 -54.0427 76.4997)" class="st0" width="200" height="3"/>
 </svg>

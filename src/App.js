@@ -1,92 +1,56 @@
 /* eslint-disable */
-import { Row,Col,Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Link, Route, Switch } from 'react-router-dom';
 
+import personData from './Data.js';
+
 function App() {
+
+  let [person, personChange] = useState(personData);
+
   return (
     <div className="App">
-      <Bar />
+      <div className="nav">
+        <Nav.Link as={Link} to="/"><img
+          alt=""
+          src="/IDEUS Logo.svg"
+          width="50"
+          height="50"
+        /></Nav.Link>
+        <Nav.Link as={Link} to="/rcmd" className="nav-btn"><b>!D<br></br>추천하기</b></Nav.Link>
+        <Nav.Link as={Link} to="/rcmded" className="nav-btn"><b>?D<br></br>추천받기</b></Nav.Link>
+        <Nav.Link as={Link} to="/setting/profile" className="nav-btn"><b>Admin</b></Nav.Link>
+      </div>
       <Switch>
         <Route path="/setting/profile">
           <div className="container">
             <SettingBtn />
-            <Profile />
+            <Profile person={person[0]}/>
           </div>
         </Route>
         <Route path="/setting/data">
           <div className="container">
             <div className="data-box-1">
-              <h1>반가워요 '<b>Admin</b>'님!</h1>
-              <p id="data-p">자기소개를 입력해보실래요?</p>
+              <h1>반가워요 '<b>{ person[0].name }</b>'님!</h1>
+              <p id="data-p">{ person[0].introduce }</p>
               <hr id="data-hr"/>
             </div>
             <SettingBtn />
-            <div className="data-box-2">
-              <h1 className="data-name">신뢰도</h1>
-              <div className="bar-container-1">
-                <div className="bar-1">95%</div>
-              </div>
-              <h1 className="data-name">분석</h1>
-              <div className="bar-container-2">
-                <div className="bar-2">100%</div>
-                <p>디자인</p>
-              </div>
-              <div className="bar-container-2">
-                <div className="bar-2">60%</div>
-                <p>코딩</p>
-              </div>
-              <div className="bar-container-2">
-                <div className="bar-2">40%</div>
-                <p>교육</p>
-              </div>
-              <img svg="./division line.svg"/>
-              <h1 className="data-name">비교</h1>
-            </div>
+            <Data />
           </div>
         </Route>
         <Route path="/setting/security">
-          <SettingBtn />
-          <h1>hii</h1>
+          <div className="container">
+            <SettingBtn />
+            <h1>hii</h1>
+          </div>
         </Route>
       </Switch>
     </div>
   );
-}
-
-function Bar() {
-  return(
-    <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="/">
-        <img
-          alt=""
-          src="./IDEUS Logo.svg"
-          width="30"
-          height="30"
-          className="d-inline-block align-top"
-        />{' '}
-        Thinking On
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="#link">Link</Nav.Link>
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-          </NavDropdown>
-        </Nav>
-      </Navbar.Collapse>
-      <button className="nav-btn"><Nav.Link as={Link} to="/rcmd">!D<br></br>추천하기</Nav.Link></button>
-      <button className="nav-btn"><Nav.Link as={Link} to="/rcmded">?D<br></br>추천받기</Nav.Link></button>
-      <button className="nav-btn"><Nav.Link as={Link} to="/setting/profile">admin</Nav.Link></button>
-    </Navbar>
-  )
 }
 
 function SettingBtn() {
@@ -99,12 +63,12 @@ function SettingBtn() {
   )
 }
 
-function Profile() {
+function Profile(props) {
   return(
     <div>
       <div className="my-box">
-        <h1 id="profile-name">Admin</h1>
-        <p>자기소개를 입력해보실래요?</p>
+        <h1 id="profile-name">{ props.person.name }</h1>
+        <p>{ props.person.introduce }</p>
         <hr/>
         <p><b>이메일</b> admin@ideus.us</p>
       </div>
@@ -116,6 +80,32 @@ function Profile() {
         <hr/>
         <p>+</p>
       </div>
+    </div>
+  )
+}
+
+function Data() {
+  return(
+    <div className="data-box-2">
+      <h1 className="data-name">신뢰도</h1>
+      <div className="bar-container-1">
+        <div className="bar-1">95%</div>
+      </div>
+      <h1 className="data-name">분석</h1>
+      <div className="bar-container-2">
+        <div className="bar-2">100%</div>
+        <p>디자인</p>
+      </div>
+      <div className="bar-container-2">
+        <div className="bar-2">60%</div>
+        <p>코딩</p>
+      </div>
+      <div className="bar-container-2">
+        <div className="bar-2">40%</div>
+        <p>교육</p>
+      </div>
+      <img svg="./division line.svg"/>
+      <h1 className="data-name">비교</h1>
     </div>
   )
 }
