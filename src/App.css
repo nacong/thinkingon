@@ -139,8 +139,10 @@ p {
   -4.096px -2.868px 20px rgba(255, 255, 255, 0.25);
 }
 
-#data-name {
+.data-name {
+  margin: 0;
   padding-top: 30px;
+  padding-bottom: 10px;
   text-align: left;
   color:#7673ff;
   font-weight:700;

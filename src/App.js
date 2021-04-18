@@ -24,11 +24,11 @@ function App() {
             </div>
             <SettingBtn />
             <div className="data-box-2">
-              <h1 id="data-name">신뢰도</h1>
+              <h1 className="data-name">신뢰도</h1>
               <div className="bar-container-1">
                 <div className="bar-1">95%</div>
               </div>
-              <h1 id="data-name">분석</h1>
+              <h1 className="data-name">분석</h1>
               <div className="bar-container-2">
                 <div className="bar-2">100%</div>
                 <p>디자인</p>
@@ -42,6 +42,7 @@ function App() {
                 <p>교육</p>
               </div>
               <img svg="./division line.svg"/>
+              <h1 className="data-name">비교</h1>
             </div>
           </div>
         </Route>
