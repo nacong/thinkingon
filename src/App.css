@@ -88,22 +88,22 @@ p {
 }
 
 .nav-btn {
-  background: var(--button-bg-color);
-  margin: 10px;
-  padding: 0;
+  color: #7673ff;
+  padding: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   font-weight: 400;
   border: none;
   border-radius: 10px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   cursor: pointer;
-  transition: 0.5s;
   text-align: left;
-  line-height: 15px;
   background: #f8f9fa;
 }
 
 a.nav-link {
-  padding: 5px 10px;
+  padding: 0;
 }
 
 div.nav {
@@ -131,6 +131,9 @@ div.nav {
   text-align: left;
 }
 
+.card-deck {
+  margin: 80px;
+}
 
 #data-p {
   font-weight: 400;

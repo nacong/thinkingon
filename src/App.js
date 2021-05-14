@@ -1,14 +1,15 @@
 /* eslint-disable */
-import { Nav } from 'react-bootstrap';
+import { Nav, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch} from 'react-router-dom';
 
 import personData from './Data.js';
 
 function App() {
-
+  
   let [person, personChange] = useState(personData);
 
   return (
@@ -20,9 +21,27 @@ function App() {
           width="50"
           height="50"
         /></Nav.Link>
-        <Nav.Link as={Link} to="/rcmd" className="nav-btn"><b>!D<br></br>추천하기</b></Nav.Link>
-        <Nav.Link as={Link} to="/rcmded" className="nav-btn"><b>?D<br></br>추천받기</b></Nav.Link>
-        <Nav.Link as={Link} to="/setting/profile" className="nav-btn"><b>Admin</b></Nav.Link>
+        <OverlayTrigger
+        placement="right"
+        delay={{ show: 100, hide: 200 }}
+        overlay={renderTooltip}
+        >
+          <Nav.Link as={Link} to="/rcmd"><button className="nav-btn"><b>!D<br></br>추천하기</b></button></Nav.Link>
+        </OverlayTrigger>
+        <OverlayTrigger
+        placement="right"
+        delay={{ show: 100, hide: 300 }}
+        overlay={renderTooltip}
+        >
+          <Nav.Link as={Link} to="/rcmded"><button className="nav-btn"><b>?D<br></br>추천받기</b></button></Nav.Link>
+        </OverlayTrigger>
+        <OverlayTrigger
+        placement="right"
+        delay={{ show: 100, hide: 300 }}
+        overlay={renderTooltip}
+        >
+          <Nav.Link as={Link} to="/setting/profile"><button className="nav-btn"><b>Admin</b></button></Nav.Link>
+        </OverlayTrigger>
       </div>
       <Switch>
         <Route path="/setting/profile">
@@ -42,6 +61,20 @@ function App() {
             <Data />
           </div>
         </Route>
+        <Route path="/post">
+          <div class="card-deck">
+            <div class="card">
+              <img class="card-img-top" src="..." alt="Card image cap"/>
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
+        </Route>
         <Route path="/setting/security">
           <div className="container">
             <SettingBtn />
@@ -51,6 +84,10 @@ function App() {
       </Switch>
     </div>
   );
+}
+
+function renderTooltip(props) {
+  return <Tooltip {...props}>상세정보입니다</Tooltip>;
 }
 
 function SettingBtn() {
