@@ -7,6 +7,7 @@ import './App.css';
 import { Link, Route, Switch} from 'react-router-dom';
 
 import personData from './Data.js';
+import mainpostData from './mainpostData.js';
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
   let [show, setShow] = useState(false);
   let [target, setTarget] = useState(null);
   const ref = useRef(null);
+  let [mainpost, mainpostChange] = useState(mainpostData);
 
   const handleClick = (event) => {
     setShow(!show);
@@ -70,6 +72,16 @@ function App() {
     </div>
       </div>
       <Switch>
+        <Route exact path="/게시물">
+          <div className="main">
+            <section className="게시물">
+              <MainpostCard mainpost={mainpost[4]}/>
+            </section>
+            <section className="질문">
+              <QuestionCard question={mainpost[4]}/>
+            </section>
+          </div>
+        </Route>
         <Route path="/setting/profile">
           <div className="container">
             <SettingBtn />
@@ -114,6 +126,49 @@ function App() {
 
 function renderTooltip(props) {
   return <Tooltip {...props}>상세정보입니다</Tooltip>;
+}
+
+function MainpostCard(props) {
+  return (
+      <div className="card">
+        <Nav.Link as={Link} to={'/detail/'+(props.mainpost.id)}>
+        <img className="card-img" src={ props.mainpost.image }></img>
+        <h5 className="card-subj">{ props.mainpost.title }</h5>
+        <p>아이디어 { props.mainpost.idea }·좋아요 { props.mainpost.like }</p>
+        </Nav.Link>
+      </div>
+  )
+}
+
+function QuestionCard(props) {
+  return (
+    <div className="question">
+      <div className="question-title">
+        <h3>{ props.question.title }</h3>
+        <p>{ props.question.date }</p>
+      </div>
+      <hr/>
+      <div className="question-content">
+        <div className="imageArray">
+          {
+            props.question.result.map((a,i)=>{
+              return(
+                <img src={a.src}/>
+              )
+            }) 
+          }
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <hr/>
+      <div className="question-footer">
+        <div className="final">
+          <img src={ props.question.final[0].src }/>
+          <p>{ props.question.final[0].title }</p>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 function SettingBtn() {
