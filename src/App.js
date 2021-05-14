@@ -1,6 +1,6 @@
 /* eslint-disable */
-import { Nav, Button, OverlayTrigger, Tooltip } from 'react-bootstrap';
-import React, { useState } from 'react';
+import { Nav, Button, OverlayTrigger, Overlay, Tooltip, ref, Popover } from 'react-bootstrap';
+import React, { useState, useRef} from 'react';
 import ReactDOM from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
@@ -11,6 +11,14 @@ import personData from './Data.js';
 function App() {
   
   let [person, personChange] = useState(personData);
+  let [show, setShow] = useState(false);
+  let [target, setTarget] = useState(null);
+  const ref = useRef(null);
+
+  const handleClick = (event) => {
+    setShow(!show);
+    setTarget(event.target);
+  };
 
   return (
     <div className="App">
@@ -42,6 +50,24 @@ function App() {
         >
           <Nav.Link as={Link} to="/setting/profile"><button className="nav-btn"><b>Admin</b></button></Nav.Link>
         </OverlayTrigger>
+        <div ref={ref}>
+      <button onClick={handleClick} className="alertButton">알림</button>
+
+      <Overlay
+        show={show}
+        target={target}
+        placement="bottom"
+        container={ref.current}
+        containerPadding={20}
+      >
+        <Popover id="popover-contained">
+          <Popover.Title as="h3">알림</Popover.Title>
+          <Popover.Content>
+            알림내용<br/>알림내용알림내용알림내용
+          </Popover.Content>
+        </Popover>
+      </Overlay>
+    </div>
       </div>
       <Switch>
         <Route path="/setting/profile">
