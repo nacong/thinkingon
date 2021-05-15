@@ -25,7 +25,7 @@ p {
 .bar-container-1 {
   height: 40px;
   width: 100%;
-  background-color: #f8f9fa;;
+  background-color: #f8f9fa;
   text-align: center;
   color: white;
   border-radius: 10px;
@@ -40,7 +40,7 @@ p {
   width: 40%;
   margin-top: 10px;
   margin-bottom: 20px;
-  background-color: #f8f9fa;;
+  background-color: #f8f9fa;
   text-align: center;
   color: white;
   border-radius: 10px;
@@ -85,44 +85,6 @@ p {
   cursor: pointer;
   transition: 0.5s;
   background: #f8f9fa;
-}
-
-.nav-btn {
-  color: #7673ff;
-  padding: 10px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  font-weight: 400;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  cursor: pointer;
-  text-align: left;
-  background: #f8f9fa;
-}
-
-.alertButton {
-  color: #7673ff;
-  padding: 10px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  font-weight: 600;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  cursor: pointer;
-  text-align: right;
-  background: #f8f9fa;
-}
-
-a.nav-link {
-  padding: 0;
-}
-
-div.nav {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .my-box {
@@ -176,145 +138,4 @@ div.nav {
   text-shadow: 3.536px 3.536px 20px rgba(92, 82, 212, 0.15),
   2.828px 2.828px 5px rgba(43, 39, 89, 0.07),
   -4.096px -2.868px 20px rgba(255, 255, 255, 0.25);
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.main {
-  margin-left: 10vw;
-  margin-right: 10vw;
-  padding-top: 5vw;
-  padding-bottom: 5vw;
-}
-
-.게시물 {
-  margin-bottom: 50px;
-}
-
-.질문 {
-  border-radius: 5px;
-  background: rgba(255,255,255,0.8);
-  box-shadow: rgba(0,0,0,0.3) 0 0 3px;
-}
-
-.질문 h3 {
-  margin: 0;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 0;
-  text-align: left;
-  font-weight: 600;
-}
-
-.질문 hr {
-  margin: 0;
-}
-
-.질문 p {
-  color: gray;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-top: 0;
-  text-align: left;
-  vertical-align: text-top;
-}
-
-.imageArray img {
-  max-width: 20em;
-  max-height: 20em;
-  padding-right: 20px;
-}
-
-.imageArray {
-  padding: 10px;
-  height: 20vh;
-  overflow: hidden;
-}
-
-.question-content p {
-  color: gray;
-  padding: 10px;
-  text-align: left;
-  vertical-align: text-top;
-}
-
-.final p {
-  color: black;
-  font-weight: 600;
-  padding: 3px;
-  max-width: 10em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.final img {
-  width: 20em;
-  height: 10em;
-  object-fit: cover;
-}
-
-.final {
-  text-align: left;
-  border-right: 0px solid #7673ff;
-  border-left: 8px solid #7673ff;
-  border-top: 0px solid #7673ff;
-  border-bottom: 0px solid #7673ff;
-}
-
-.question-footer {
-  padding: 10px;
-}
-
-.card {
-  max-width: 20em;
-  border-radius: 5px;
-  background: rgba(255,255,255,0.8);
-  box-shadow: rgba(0,0,0,0.3) 0 0 3px;
-}
-
-.card-subj {
-  padding-left: 1vw;
-  padding-right: 1vw;
-  padding-bottom: 0;
-  padding-top: 1vh;
-  margin: 0;
-  color:black;
-  font-weight: 600;
-  font-size: 25px;
-}
-
-.card h5 {
-  text-align: left;
-  vertical-align: text-top;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 40vh;
-  height: 5vh;
-}
-
-.card p {
-  color: gray;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  padding-bottom: 1vh;
-  padding-top: 0;
-  text-align: left;
-  vertical-align: text-top;
 }

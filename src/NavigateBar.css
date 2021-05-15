@@ -1,0 +1,82 @@
+a.nav-link {
+    padding: 0;
+    line-height: 90%;
+}
+
+.navigation {
+    box-shadow: rgba(0, 0, 0, 0.4) 0 0 10px;
+    background: #faf5f5;
+    padding: 5px;
+}
+
+.logoButton {
+    vertical-align: middle;
+    margin: 0 20px 0 0;
+    border: none;
+    cursor: pointer;
+    background: rgba(246, 245, 247);
+}
+  
+.recommendButton {
+    vertical-align: middle;
+    padding: 5px;
+    margin: 0 20px 0 0;
+    font-weight: 400;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset rgba(0, 0, 0, 0.05) 0 0 5px;
+    cursor: pointer;
+    text-align: left;
+    background: rgba(246, 245, 247);
+}
+
+.settingButton {
+    vertical-align: middle;
+    color: #E7A9A9;
+    padding: 10px;
+    margin: 0 20px 0 0;
+    font-weight: 400;
+    border: none;
+    border-radius: 20px;
+    box-shadow: inset rgba(0, 0, 0, 0.05) 0 0 5px;
+    cursor: pointer;
+    background: rgba(246, 245, 247);
+}
+
+.alertButton {
+    vertical-align: middle;
+    padding: 10px;
+    margin: 0 20px 0 0;
+    font-weight: 400;
+    border: none;
+    border-radius: 10px;
+    box-shadow: inset rgba(0, 0, 0, 0.05) 0 0 5px;
+    cursor: pointer;
+    text-align: left;
+    background: rgba(246, 245, 247);
+}
+
+span {
+    color: #7673ff;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.alertButton p, .recommendButton p {
+    font-weight: 600;
+    color: #7673ff;
+}
+
+.settingButton p {
+    font-weight: 600;
+    color: #e7a9a9;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+    margin-left: 20px;
+    clear: both;
+}
